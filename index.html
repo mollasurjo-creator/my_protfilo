@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Creative Engineer, CAD Specialist & Geospatial Analyst</title>
+  <meta name="description" content="Professional portfolio of Creative Engineer & Spatial Specialist bridging Computer Applications (BCA) with high-precision AutoCAD 2D/3D drafting and Geographic Information Systems (GIS).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Scroll Track (Extended 850vh for immersive 5-section scrollytelling) -->
+  <div id="scroll-container">
+    <canvas id="animation-canvas"></canvas>
+  </div>
+
+  <!-- Ambient Light Depth Layers (Matching video red spotlight and cyan rim light) -->
+  <div class="ambient-light-layer" aria-hidden="true">
+    <div class="glow-orb glow-red"></div>
+    <div class="glow-orb glow-cyan"></div>
+    <div class="vignette-overlay"></div>
+  </div>
+
+  <!-- Real-time HUD Depth Layer -->
+  <div class="hud-depth-layer" aria-hidden="true">
+    <div class="hud-chip hud-top-left" id="hud-stats-chip">
+      <span class="hud-dot"></span>
+      <span id="hud-status-text">SYS.ONLINE // FRAME 001/209 // 0.0%</span>
+    </div>
+    <div class="hud-chip hud-bottom-right">
+      <span class="hud-crosshair">+</span>
+      <span>COORD: 28.6139° N, 77.2090° E // WGS84</span>
+    </div>
+  </div>
+
+  <!-- Right-Hand Timeline Section Progress Tracker -->
+  <nav class="section-tracker" aria-label="Timeline navigation">
+    <div class="track-indicator" id="track-indicator"></div>
+    <button class="track-node is-active" data-sec="0" aria-label="Overview Section">
+      <span class="node-num">01</span>
+      <span class="node-label">OVERVIEW</span>
+    </button>
+    <button class="track-node" data-sec="1" aria-label="Pathways Section">
+      <span class="node-num">02</span>
+      <span class="node-label">PATHWAYS</span>
+    </button>
+    <button class="track-node" data-sec="2" aria-label="Arsenal Section">
+      <span class="node-num">03</span>
+      <span class="node-label">ARSENAL</span>
+    </button>
+    <button class="track-node" data-sec="3" aria-label="Projects Section">
+      <span class="node-num">04</span>
+      <span class="node-label">PROJECTS</span>
+    </button>
+    <button class="track-node" data-sec="4" aria-label="Milestones Section">
+      <span class="node-num">05</span>
+      <span class="node-label">MILESTONES</span>
+    </button>
+  </nav>
+
+  <!-- Main Content Overlay Layers -->
+  <main class="content-overlay">
+    <!-- Top Nav Header -->
+    <header class="top-nav">
+      <div class="nav-col nav-left">
+        <span class="nav-tag">PORTFOLIO /</span>
+        <h1 class="nav-title">PROFESSIONAL SERVICES</h1>
+      </div>
+
+      <nav class="nav-links" aria-label="Quick links">
+        <a href="#overview" class="nav-link" data-target-sec="0">Overview</a>
+        <a href="#pathways" class="nav-link" data-target-sec="1">Pathways</a>
+        <a href="#arsenal" class="nav-link" data-target-sec="2">Arsenal</a>
+        <a href="#projects" class="nav-link" data-target-sec="3">Projects</a>
+        <a href="#milestones" class="nav-link" data-target-sec="4">Connect</a>
+      </nav>
+
+      <div class="nav-col nav-right">
+        <span class="nav-tag">FIELD /</span>
+        <span class="nav-title">TECHNOLOGICAL SOLUTIONS</span>
+      </div>
+    </header>
+
+    <!-- ============================================== -->
+    <!-- SECTION 1: HERO OVERVIEW (0% - 18% Scroll)     -->
+    <!-- ============================================== -->
+    <section class="stage-section stage-hero" id="stage-hero" aria-label="Introduction Overview">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-pulse"></span>
+          <span>CREATIVE ENGINEER &amp; SPATIAL SPECIALIST</span>
+        </div>
+        <h2 class="hero-headline">PRECISION DRAFTING &amp;<br><em>GEOSPATIAL INTELLIGENCE</em></h2>
+        <p class="hero-subtext">
+          Bridging Computer Applications with High-Precision 2D/3D Drafting &amp; Geographic Information Systems.
+          Transforming complex computational logic, spatial phenomena, and industrial schematics into production-grade solutions.
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn-hero-primary" data-target-sec="1">
+            <span>EXPLORE PATHWAYS</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17l9.2-9.2M17 17V8H8"/>
+            </svg>
+          </button>
+          <button class="btn-hero-secondary" data-target-sec="3">
+            <span>VIEW BLUEPRINTS</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SECTION 2: SERVICES & PATHWAYS (18% - 46% Scroll) -->
+    <!-- ============================================== -->
+    <section class="stage-section stage-services" id="stage-services" aria-label="Academic & Professional Pathways">
+      <div class="cards-container">
+        
+        <!-- Left Group -->
+        <div class="cards-group cards-left">
+          <!-- Card 1: Academic Pathway -->
+          <article class="service-card card-academic" data-index="0">
+            <div class="card-inner">
+              <div class="card-top-tag">01 // FOUNDATION</div>
+              <h3 class="card-title">ACADEMIC<br>PATHWAY</h3>
+              
+              <div class="card-items">
+                <div class="card-item">
+                  <div class="icon-box" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <rect x="2" y="4" width="20" height="15" rx="3"></rect>
+                      <text x="12" y="14.5" text-anchor="middle" font-size="6.5" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" fill="currentColor" stroke="none">BCA</text>
+                    </svg>
+                  </div>
+                  <div class="item-content">
+                    <h4 class="item-heading">Bachelor of Computer Applications</h4>
+                    <p class="item-sub">Focus on Core CS, Data Structures &amp; Databases</p>
+                  </div>
+                </div>
+
+                <div class="card-item">
+                  <div class="icon-box" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                      <path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"></path>
+                    </svg>
+                  </div>
+                  <div class="item-content">
+                    <h4 class="item-heading">Graduate in Computer Applications</h4>
+                    <p class="item-sub">Comprehensive technical degree curriculum</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-desc">
+                <p>Curriculum in software engineering, algorithmic problem solving, scalable relational databases (RDBMS), object-oriented architectures, and computational systems.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: AutoCAD Masterclass -->
+          <article class="service-card card-autocad" data-index="1">
+            <div class="card-inner">
+              <div class="card-top-tag">02 // PRECISION CAD</div>
+              <h3 class="card-title">AUTOCAD<br>MASTERCLASS</h3>
+              
+              <div class="card-items">
+                <div class="card-item">
+                  <div class="icon-box" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 21h18"></path>
+                      <path d="M5 21V5l14 16H5z"></path>
+                      <path d="M8 18h2"></path>
+                      <path d="M8 15h3"></path>
+                      <path d="M8 12h2"></path>
+                    </svg>
+                  </div>
+                  <div class="item-content">
+                    <h4 class="item-heading">Expert in 2D &amp; 3D Drafting</h4>
+                    <p class="item-sub">Design optimization, detailed blueprints</p>
+                  </div>
+                </div>
+
+                <div class="card-item">
+                  <div class="icon-box" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="9" r="6"></circle>
+                      <path d="m9 9 2 2 4-4"></path>
+                      <path d="M8.21 13.89 7 22l5-3 5 3-1.21-8.12"></path>
+                    </svg>
+                  </div>
+                  <div class="item-content">
+                    <h4 class="item-heading">AutoCAD Certified Professional</h4>
+                    <p class="item-sub">Industry-recognized certification credential</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-desc">
+                <p>Specialized in industrial schematics, parametric modeling, mechanical assemblies, spatial technical documentation, drafting standards, and ISO/ASME blueprints.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Center Subject Clear Corridor -->
+        <div class="center-subject-clearance" aria-hidden="true"></div>
+
+        <!-- Right Group -->
+        <div class="cards-group cards-right">
+          <!-- Card 3: GIS & Spatial Data (Frosted Centerpiece) -->
+          <article class="service-card card-gis card-frosted" data-index="2">
+            <div class="card-inner">
+              <div class="card-top-tag">03 // GEOSPATIAL</div>
+              <h3 class="card-title">GIS &amp;<br>SPATIAL<br>DATA</h3>
+              
+              <div class="card-items">
+                <div class="card-item">
+                  <div class="icon-box" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                  </div>
+                  <div class="item-content">
+                    <h4 class="item-heading">Geographic Information Systems (GIS)</h4>
+                    <p class="item-sub">ArcGIS Pro, QGIS &amp; spatial querying</p>
+                  </div>
+                </div>
+
+                <div class="card-item">
+                  <div class="icon-box" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path>
+                      <path d="M4 22v-3a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v3"></path>
+                      <line x1="2" y1="10" x2="22" y2="10"></line>
+                    </svg>
+                  </div>
+                  <div class="item-content">
+                    <h4 class="item-heading">Data Analysis &amp; Fieldwork Integration</h4>
+                    <p class="item-sub">Spatial modeling, cartographic design</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-desc">
+                <p>Processing high-resolution satellite imagery, remote sensing vector layers, DEM terrain models, geostatistical raster analysis, and georeferenced spatial datasets.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Professional Summary & Passions -->
+          <article class="service-card card-summary" data-index="3">
+            <div class="card-inner">
+              <div class="card-top-tag">04 // PASSIONS</div>
+              <h3 class="card-title">PROFESSIONAL<br>SUMMARY &amp;<br>PASSIONS</h3>
+              
+              <div class="card-items">
+                <div class="card-item">
+                  <div class="icon-box" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 3v18M3 12h18M6 6l12 12M6 18L18 6"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="item-content">
+                    <h4 class="item-heading">Key Strengths</h4>
+                    <p class="item-sub">Problem-solving, technical proficiency &amp; precision</p>
+                  </div>
+                </div>
+
+                <div class="card-item">
+                  <div class="icon-box" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="9" cy="7" r="3"></circle>
+                      <path d="M3 17a6 6 0 0 1 12 0v1H3v-1z"></path>
+                      <path d="M16 11a3 3 0 1 0 0-6"></path>
+                      <path d="M21 17a5.5 5.5 0 0 0-6-3"></path>
+                    </svg>
+                  </div>
+                  <div class="item-content">
+                    <h4 class="item-heading">Interests &amp; Dedication</h4>
+                    <p class="item-sub">Advanced coding, technical volunteering, lifelong learning</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-desc">
+                <p>Passionate technologist integrating computer science with real-world spatial planning, mechanical drafting excellence, and community tech engagement.</p>
+              </div>
+
+              <!-- 4-pointed Star Accent on Card 4 -->
+              <div class="star-accent" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C12 7.2 16.8 12 24 12C16.8 12 12 16.8 12 24C12 16.8 7.2 12 0 12C7.2 12 12 7.2 12 0Z"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SECTION 3: METRICS & ARSENAL (45% - 66% Scroll) -->
+    <!-- ============================================== -->
+    <section class="stage-section stage-metrics" id="stage-metrics" aria-label="Technical Metrics and Capabilities">
+      <div class="metrics-wrapper">
+        <div class="metrics-header">
+          <span class="stage-eyebrow">TECHNOLOGICAL ARSENAL</span>
+          <h2 class="stage-heading">ENGINEERED FOR <em>MICRON-LEVEL PRECISION</em></h2>
+          <p class="stage-subheading">High-standard industrial modeling &amp; computational geodata analytics</p>
+        </div>
+
+        <div class="metrics-grid">
+          <!-- Metric Card 1 -->
+          <div class="metric-card">
+            <div class="metric-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 3v18M3 12h18"></path>
+                <circle cx="12" cy="12" r="3" fill="#38bdf8"></circle>
+              </svg>
+            </div>
+            <div class="metric-number">99.8<span>%</span></div>
+            <div class="metric-label">Drafting Tolerance</div>
+            <p class="metric-detail">Sub-millimeter parametric modeling conforming strictly to ISO &amp; ASME drafting standards.</p>
+          </div>
+
+          <!-- Metric Card 2 -->
+          <div class="metric-card">
+            <div class="metric-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                <path d="M3 9h18M9 21V9"></path>
+              </svg>
+            </div>
+            <div class="metric-number">50<span>+</span></div>
+            <div class="metric-label">Production Blueprints</div>
+            <p class="metric-detail">Detailed assembly schematics, structural plans, section cuts, and multi-layered CAD drawings delivered.</p>
+          </div>
+
+          <!-- Metric Card 3 -->
+          <div class="metric-card">
+            <div class="metric-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5">
+                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                <line x1="8" y1="2" x2="8" y2="18"></line>
+                <line x1="16" y1="6" x2="16" y2="22"></line>
+              </svg>
+            </div>
+            <div class="metric-number">100<span>k+</span></div>
+            <div class="metric-label">Spatial Coordinates</div>
+            <p class="metric-detail">Georeferenced satellite datasets, DEM elevation models, LiDAR point clouds, and contour vectors processed.</p>
+          </div>
+        </div>
+
+        <!-- Tech Stack Categorized Pills Array -->
+        <div class="tech-arsenal-categories">
+          <div class="arsenal-group">
+            <span class="group-title">CAD &amp; SPATIAL</span>
+            <div class="tech-pills-row">
+              <span class="tech-pill">AutoCAD 2D / 3D</span>
+              <span class="tech-pill">ArcGIS Pro</span>
+              <span class="tech-pill">QGIS Spatial</span>
+              <span class="tech-pill">PostGIS Geodatabase</span>
+              <span class="tech-pill">Photogrammetry</span>
+              <span class="tech-pill">WGS84 &amp; UTM Projections</span>
+            </div>
+          </div>
+          
+          <div class="arsenal-group">
+            <span class="group-title">COMPUTATION &amp; CODE</span>
+            <div class="tech-pills-row">
+              <span class="tech-pill">Python (GeoPandas, NumPy)</span>
+              <span class="tech-pill">SQL &amp; Relational Databases</span>
+              <span class="tech-pill">JavaScript &amp; Canvas API</span>
+              <span class="tech-pill">Modern HTML5 / CSS3</span>
+              <span class="tech-pill">Algorithmic Problem Solving</span>
+              <span class="tech-pill">Git &amp; Version Control</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SECTION 4: PROJECTS & BLUEPRINTS (65% - 84%)    -->
+    <!-- ============================================== -->
+    <section class="stage-section stage-projects" id="stage-projects" aria-label="Featured Projects & Blueprints">
+      <div class="projects-wrapper">
+        <div class="projects-header">
+          <span class="stage-eyebrow">PORTFOLIO SHOWCASE</span>
+          <h2 class="stage-heading">PRECISION <em>BLUEPRINTS &amp; SPATIAL MAPS</em></h2>
+          <p class="stage-subheading">Selected works demonstrating industrial drafting and spatial analytics</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-glass-card" data-project="0">
+            <div class="project-card-header">
+              <span class="project-chip">AUTOCAD 3D</span>
+              <span class="project-year">2025</span>
+            </div>
+            <div class="project-preview-box blueprint-preview">
+              <div class="blueprint-grid"></div>
+              <div class="blueprint-vector">
+                <svg width="90" height="70" viewBox="0 0 100 80" fill="none" stroke="#38bdf8" stroke-width="1.5">
+                  <rect x="10" y="15" width="80" height="50" rx="4" stroke-dasharray="4 2"/>
+                  <circle cx="30" cy="40" r="14"/>
+                  <circle cx="70" cy="40" r="14"/>
+                  <line x1="10" y1="40" x2="90" y2="40"/>
+                  <line x1="50" y1="15" x2="50" y2="65"/>
+                  <circle cx="50" cy="40" r="4" fill="#38bdf8"/>
+                </svg>
+              </div>
+              <span class="blueprint-badge">ISO 128 COMPLIANT</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Parametric Industrial Mechanical Assembly</h3>
+              <p class="project-desc">Complete multi-layered mechanical schematics, cross-sectional views, and geometric dimensioning &amp; tolerancing (GD&amp;T).</p>
+              <div class="project-tags">
+                <span>AutoCAD 3D</span>
+                <span>GD&amp;T</span>
+                <span>Manufacturing Blueprints</span>
+              </div>
+              <button class="btn-inspect-project" data-project-idx="0">
+                <span>INSPECT DETAILS</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-glass-card" data-project="1">
+            <div class="project-card-header">
+              <span class="project-chip">GIS &amp; REMOTE SENSING</span>
+              <span class="project-year">2026</span>
+            </div>
+            <div class="project-preview-box gis-preview">
+              <div class="gis-grid"></div>
+              <div class="gis-vector">
+                <svg width="90" height="70" viewBox="0 0 100 80" fill="none" stroke="#34d399" stroke-width="1.5">
+                  <path d="M10 65 Q 30 20, 50 45 T 90 25" stroke="#34d399"/>
+                  <path d="M10 75 Q 35 40, 60 55 T 90 40" stroke="#38bdf8" stroke-dasharray="3 2"/>
+                  <circle cx="50" cy="45" r="5" fill="#34d399"/>
+                  <circle cx="75" cy="30" r="3" fill="#38bdf8"/>
+                  <polygon points="25,50 35,30 45,50" fill="rgba(52, 211, 153, 0.2)" stroke="#34d399"/>
+                </svg>
+              </div>
+              <span class="blueprint-badge">DEM TOPOGRAPHY</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Geospatial Watershed &amp; Terrain Modeling</h3>
+              <p class="project-desc">Multi-criteria spatial terrain analysis, watershed delineation, and high-resolution elevation surface extraction using remote sensing.</p>
+              <div class="project-tags">
+                <span>ArcGIS Pro</span>
+                <span>QGIS</span>
+                <span>DEM Analysis</span>
+              </div>
+              <button class="btn-inspect-project" data-project-idx="1">
+                <span>INSPECT DETAILS</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-glass-card" data-project="2">
+            <div class="project-card-header">
+              <span class="project-chip">DATABASE &amp; PYTHON</span>
+              <span class="project-year">2024</span>
+            </div>
+            <div class="project-preview-box db-preview">
+              <div class="db-grid"></div>
+              <div class="db-vector">
+                <svg width="90" height="70" viewBox="0 0 100 80" fill="none" stroke="#a78bfa" stroke-width="1.5">
+                  <ellipse cx="50" cy="20" rx="35" ry="10"/>
+                  <path d="M15 20v20c0 5.5 15.7 10 35 10s35-4.5 35-10V20"/>
+                  <path d="M15 40v20c0 5.5 15.7 10 35 10s35-4.5 35-10V40"/>
+                  <circle cx="50" cy="50" r="4" fill="#a78bfa"/>
+                </svg>
+              </div>
+              <span class="blueprint-badge">POSTGIS VECTOR DB</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Spatial Data Pipeline &amp; Geodatabase</h3>
+              <p class="project-desc">Automated vector geoprocessing scripts in Python paired with indexed PostGIS geodatabases for low-latency spatial queries.</p>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>PostgreSQL / PostGIS</span>
+                <span>GeoPandas</span>
+              </div>
+              <button class="btn-inspect-project" data-project-idx="2">
+                <span>INSPECT DETAILS</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SECTION 5: MILESTONES & CONNECT (82% - 100%)    -->
+    <!-- ============================================== -->
+    <section class="stage-section stage-milestones" id="stage-milestones" aria-label="Selected Milestones & Collaboration">
+      <div class="milestones-wrapper">
+        <div class="milestones-left">
+          <span class="stage-eyebrow">TRACK RECORD</span>
+          <h2 class="stage-heading">INNOVATING AT THE <em>INTERSECTION</em> OF CODE &amp; CAD</h2>
+          <p class="milestones-lead">A continuous trajectory of technical excellence, from computer applications foundations to precision spatial engineering.</p>
+          
+          <div class="milestone-items">
+            <div class="milestone-row">
+              <span class="ms-year">2026</span>
+              <div class="ms-body">
+                <h4>Geospatial Environmental Cartography</h4>
+                <p>High-resolution terrain mapping, satellite imagery feature extraction &amp; watershed spatial modeling.</p>
+              </div>
+            </div>
+            <div class="milestone-row">
+              <span class="ms-year">2025</span>
+              <div class="ms-body">
+                <h4>Parametric 3D Industrial Assembly</h4>
+                <p>Complete mechanical schematics with structural tolerance verification and production-ready drafting.</p>
+              </div>
+            </div>
+            <div class="milestone-row">
+              <span class="ms-year">2024</span>
+              <div class="ms-body">
+                <h4>Core CS &amp; Relational Spatial DB</h4>
+                <p>Advanced computational algorithms, data structures &amp; optimized spatial indexing for large vector datasets.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="milestones-right">
+          <div class="contact-glass-panel">
+            <div class="status-indicator">
+              <span class="status-pulsar"></span>
+              <span>AVAILABLE FOR SELECTIVE COLLABORATION</span>
+            </div>
+            <h3 class="panel-title">Initiate a Technical Collaboration</h3>
+            <p class="panel-text">Ready to contribute advanced AutoCAD drafting, GIS analysis, or computational software engineering to your team and projects.</p>
+            
+            <div class="panel-skills-summary">
+              <div class="summary-pill">✓ Certified AutoCAD Expert</div>
+              <div class="summary-pill">✓ BCA Computer Science</div>
+              <div class="summary-pill">✓ GIS Spatial Specialist</div>
+            </div>
+
+            <div class="action-buttons">
+              <button class="btn-primary" id="btn-open-contact-modal">
+                <span>CONNECT DIRECTLY</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+              <button class="btn-secondary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <span>BACK TO TOP</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 19V5M5 12l7-7 7 7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scroll Indicator (Visible on initial hero) -->
+    <footer class="scroll-indicator-wrap" id="scroll-indicator">
+      <div class="scroll-indicator-badge">
+        <span class="scroll-text">SCROLL TO NAVIGATE TIMELINE</span>
+        <div class="scroll-mouse">
+          <div class="mouse-wheel"></div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Interactive Project Details Modal -->
+  <div class="modal-backdrop" id="project-modal" aria-hidden="true" role="dialog">
+    <div class="modal-glass-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close project modal">&times;</button>
+      <div class="modal-header">
+        <span class="modal-category" id="modal-category">CATEGORY</span>
+        <h3 class="modal-title" id="modal-title">Project Title</h3>
+      </div>
+      <div class="modal-body">
+        <div class="modal-highlight-box" id="modal-highlight">Key Highlights</div>
+        <p class="modal-description" id="modal-description">Detailed description of the engineering and drafting process.</p>
+        <div class="modal-specs-grid" id="modal-specs">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-modal-action" id="modal-action-btn">
+          <span>CLOSE PREVIEW</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Contact Modal -->
+  <div class="modal-backdrop" id="contact-modal" aria-hidden="true" role="dialog">
+    <div class="modal-glass-container contact-modal-box">
+      <button class="modal-close-btn" id="contact-close-btn" aria-label="Close contact modal">&times;</button>
+      <div class="modal-header">
+        <span class="modal-category">DIRECT CHANNEL</span>
+        <h3 class="modal-title">Start a Conversation</h3>
+        <p class="modal-sub">Inquire about AutoCAD drafting projects, GIS spatial studies, or software collaboration.</p>
+      </div>
+      <form class="contact-form" id="portfolio-contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been prepared.');">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contact-name">Your Name</label>
+            <input type="text" id="contact-name" placeholder="Alex Morgan" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email Address</label>
+            <input type="email" id="contact-email" placeholder="alex@company.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contact-subject">Project Domain</label>
+          <select id="contact-subject">
+            <option value="cad">AutoCAD 2D/3D Drafting &amp; Blueprints</option>
+            <option value="gis">GIS Mapping &amp; Spatial Modeling</option>
+            <option value="cs">Computer Applications / Software Dev</option>
+            <option value="general">General Collaboration &amp; Advisory</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Project Scope &amp; Requirements</label>
+          <textarea id="contact-message" rows="4" placeholder="Describe the technical deliverables, schedule, or objectives..."></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary full-width">
+            <span>TRANSMIT MESSAGE</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
